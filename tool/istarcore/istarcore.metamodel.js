@@ -86,8 +86,8 @@ var istarcoreMetamodel = {
                 //A parent can only be AND-refined or OR-refined, not both simultaneously.
 
                 var result = false;
-                result = source.isTask() || source.isGoal();
-                result = result && (target.isTask() || target.isGoal());
+                result = source.isTask() || source.isGoal() || source.isQuality() || source.isResource();
+                result = result && (target.isTask() || target.isGoal() || target.isQuality() || target.isResource());
                 result = result && (source != target);
                 result = result && (source.attributes.parent === target.attributes.parent);
                 return result;
@@ -105,8 +105,8 @@ var istarcoreMetamodel = {
                 //A parent can only be AND-refined or OR-refined, not both simultaneously.
 
                 var result = false;
-                result = source.isTask() || source.isGoal();
-                result = result && (target.isTask() || target.isGoal());
+                result = source.isTask() || source.isGoal() || source.isQuality() || source.isResource();
+                result = result && (target.isTask() || target.isGoal() || target.isQuality() || target.isResource());
                 result = result && (source != target);
                 result = result && (source.attributes.parent === target.attributes.parent);
                 return result;
