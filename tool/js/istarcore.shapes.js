@@ -243,7 +243,8 @@ joint.shapes.istar.ParticipatesInLink = joint.dia.Link.extend({
             '.marker-target': {
                 d: 'M 10 0 L 5 5 L 10 5 M 5 5 L 10 10',
                 fill: 'none',
-                'stroke-width': 1.2
+                'stroke-width': 1.8		
+				
             }
         },
         'labelRectOffset': -44,  // in order to correctly position the box behind the label
@@ -341,11 +342,31 @@ joint.shapes.istar.AndRefinementLink = joint.dia.Link.extend({
                 d: 'M 15 0 L 15 8 M 15 4 L 5 4 ',
                 // d:    'M 15 0 L 15 20 M 15 10 L 0 10 ',
                 // d: 'M 15 0 L 15 20 M 15 10 L 0 10 ',
-                fill: 'black',
-                'stroke-width': 1
+                fill: 'white',
+                'stroke-width': 1,
             },
 
             '.connection': {fill: 'none'},//necessary in order to prevent filling the curves when saving the image
+            '.connection-wrap': {fill: 'none'}//necessary in order to prevent filling the curves when saving the image
+
+        },
+        smooth: false
+    }, joint.dia.Link.prototype.defaults)
+});
+joint.shapes.istar.AwarenessLink = joint.dia.Link.extend({
+    defaults: joint.util.deepSupplement({
+        type: 'istar.AwarenessLink',
+        arrowheadMarkup: '<g />',//prevents the arrowhead from appearing in the saved image
+        attrs: {
+            '.marker-source': {d: '',}, //required in order to have correct fitToContent behavior
+            '.marker-target': {
+                d: 'M 10 0 L 5 5 L 10 5 M 5 5 L 10 10',
+                fill: 'none',
+                'stroke-width': 1.8,
+				'stroke':'red'
+            },
+
+            '.connection': {fill: 'none','stroke':'red'},//necessary in order to prevent filling the curves when saving the image
             '.connection-wrap': {fill: 'none'}//necessary in order to prevent filling the curves when saving the image
 
         },
@@ -446,7 +467,9 @@ joint.shapes.istar.QualificationLink = joint.dia.Link.extend({
                 'stroke-dasharray': '10,5'
             },//necessary in order to prevent filling the curves when saving the image
             '.connection-wrap': {fill: 'none'},//necessary in order to prevent filling the curves when saving the image
-
+			rect: {
+                        fill: 'rgb(205,254,205)',
+                    }
         },
         smooth: false
     }, joint.dia.Link.prototype.defaults)

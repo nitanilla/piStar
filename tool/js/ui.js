@@ -239,17 +239,18 @@ ui.defineInteractions = function () {
                 }
             }
             else {
-                if (ui.currentAddingElement.match(/AndRefinementLink|OrRefinementLink|NeededByLink|QualificationLink|ContributionLink|DependencyLink|make|help|hurt|break/)) {
+                if (ui.currentAddingElement.match(/AndRefinementLink|OrRefinementLink|NeededByLink|AwarenessLink|QualificationLink|ContributionLink|DependencyLink|make|help|hurt|break/)) {
                     if (ui.isLinkSourceUndefined()) {
                         cellView.highlight({blur: 10, color: 'blue'});
                         ui.linkSource = cellView;
                     } else {
                         ui.linkTarget = cellView;
 
-                        if (ui.currentAddingElement.match(/AndRefinementLink|OrRefinementLink|NeededByLink|QualificationLink|ContributionLink|make|help|hurt|break/)) {
+                        if (ui.currentAddingElement.match(/AndRefinementLink|OrRefinementLink|NeededByLink|AwarenessLink|QualificationLink|ContributionLink|make|help|hurt|break/)) {
                             if (ui.currentAddingElement === 'AndRefinementLink') istar.addAndRefinementLink(ui.linkSource.model, ui.linkTarget.model);
                             else if (ui.currentAddingElement === 'OrRefinementLink') istar.addOrRefinementLink(ui.linkSource.model, ui.linkTarget.model);
                             else if (ui.currentAddingElement === 'NeededByLink') istar.addNeededByLink(ui.linkSource.model, ui.linkTarget.model);
+							else if (ui.currentAddingElement === 'AwarenessLink') istar.addAwarenessLink(ui.linkSource.model, ui.linkTarget.model);
                             else if (ui.currentAddingElement === 'QualificationLink') istar.addQualificationLink(ui.linkSource.model, ui.linkTarget.model);
                             else if (ui.currentAddingElement.match(/make|help|hurt|break/i)) {
                                 var newLink = istar.addContributionLink(ui.linkSource.model, ui.linkTarget.model, ui.currentAddingElement);

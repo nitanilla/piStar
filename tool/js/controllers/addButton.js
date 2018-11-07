@@ -167,6 +167,15 @@ uiC.createAddButtons = function() {
             statusText: 'Needed-By link: click first on the Resource and then on the Task that needs it.'
         })
     }).render();
+	new uiC.AddButtonView({
+        model: new uiC.AddButtonModel({
+            label: 'Awareness',
+            action: ui.STATE_ADD_LINK,
+            name: 'AwarenessLink',
+            tooltip: 'Add Awareness link',
+            statusText: 'Awareness link: click first on one element and then on the element that receives the awareness (Goal, Task or Resource).'
+        })
+    }).render();
     new uiC.AddButtonDropdownItemView({
         attributes: {parent: '#addContributionDropdown'},
         model: new uiC.AddButtonModel({

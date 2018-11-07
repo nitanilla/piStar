@@ -93,6 +93,25 @@ var istarcoreMetamodel = {
                 return result;
             }
         },
+		{
+            'name': 'AwarenessLink',
+            'isValid': function (source, target) {
+                //istar 2.0:
+                //goal->goal; goal->task; task->task; task->goal
+                //Refinement is an n-ary relationship relating one parent
+                //to one or more children. An intentional element can be the parent
+                //in at most one refinement relationship
+                //...any kind of parent (goal or task)
+                //A parent can only be AND-refined or OR-refined, not both simultaneously.
+
+                var result = false;
+                result = source.isTask() || source.isGoal() || source.isQuality() || source.isResource();
+                result = result && (target.isTask() || target.isGoal() || target.isQuality() || target.isResource());
+                result = result && (source != target);
+                result = result && (source.attributes.parent === target.attributes.parent);
+                return result;
+            }
+        },
         {
             'name': 'OrRefinementLink',
             'isValid': function (source, target) {
