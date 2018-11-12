@@ -32,16 +32,28 @@ var istarcoreMetamodel = {
     /** @type {Object[]} */
     nodes: [
         {
-            'name': 'Goal',
+            'name': 'Goal',	
+        },
+		{
+            'name': 'GoalAwareness',	
         },
         {
             'name': 'Quality',
         },
+		{
+            'name': 'QualityAwareness',
+        },
         {
             'name': 'Task',
         },
+		{
+            'name': 'TaskAwareness',
+        },
         {
             'name': 'Resource',
+        },
+		{
+            'name': 'ResourceAwareness',
         }
     ],
     //links between actor-like elements
@@ -86,8 +98,8 @@ var istarcoreMetamodel = {
                 //A parent can only be AND-refined or OR-refined, not both simultaneously.
 
                 var result = false;
-                result = source.isTask() || source.isGoal() || source.isQuality() || source.isResource();
-                result = result && (target.isTask() || target.isGoal() || target.isQuality() || target.isResource());
+                result = source.isTask() || source.isGoal() || source.isQuality() || source.isResource() || source.isGoalAwareness() || source.isTaskAwareness() || source.isQualityAwareness() || source.isResourceAwareness();
+                result = result && (target.isTask() || target.isGoal() || target.isQuality() || target.isResource() || target.isGoalAwareness() || target.isTaskAwareness() || target.isQualityAwareness() || target.isResourceAwareness());
                 result = result && (source != target);
                 result = result && (source.attributes.parent === target.attributes.parent);
                 return result;
@@ -105,8 +117,8 @@ var istarcoreMetamodel = {
                 //A parent can only be AND-refined or OR-refined, not both simultaneously.
 
                 var result = false;
-                result = source.isTask() || source.isGoal() || source.isQuality() || source.isResource();
-                result = result && (target.isTask() || target.isGoal() || target.isQuality() || target.isResource());
+                result = source.isTask() || source.isGoal() || source.isQuality() || source.isResource() || source.isGoalAwareness() || source.isTaskAwareness() || source.isQualityAwareness() || source.isResourceAwareness();
+                result = result && (target.isTask() || target.isGoal() || target.isQuality() || target.isResource() || target.isGoalAwareness() || target.isTaskAwareness() || target.isQualityAwareness() || target.isResourceAwareness());
                 result = result && (source != target);
                 result = result && (source.attributes.parent === target.attributes.parent);
                 return result;
@@ -124,8 +136,8 @@ var istarcoreMetamodel = {
                 //A parent can only be AND-refined or OR-refined, not both simultaneously.
 
                 var result = false;
-                result = source.isTask() || source.isGoal() || source.isQuality() || source.isResource();
-                result = result && (target.isTask() || target.isGoal() || target.isQuality() || target.isResource());
+                result = source.isTask() || source.isGoal() || source.isQuality() || source.isResource() || source.isGoalAwareness() || source.isTaskAwareness() || source.isQualityAwareness() || source.isResourceAwareness();
+                result = result && (target.isTask() || target.isGoal() || target.isQuality() || target.isResource() || target.isGoalAwareness() || target.isTaskAwareness() || target.isQualityAwareness() || target.isResourceAwareness());
                 result = result && (source != target);
                 result = result && (source.attributes.parent === target.attributes.parent);
                 return result;
@@ -156,8 +168,8 @@ var istarcoreMetamodel = {
                 // and tasks, it is also possible to initiate contributions
                 //from resources and qualities.
                 var result = false;
-                result = source.isGoal() || source.isQuality() || source.isTask() || source.isResource();
-                result = result && target.isQuality();
+                result = source.isGoal() || source.isQuality() || source.isTask() || source.isResource() || source.isGoalAwareness() || source.isTaskAwareness() || source.isQualityAwareness() || source.isResourceAwareness();
+                result = result && target.isQuality() || target.isQualityAwareness();
                 result = result && (source != target);
                 result = result && (source.attributes.parent === target.attributes.parent);
                 return result;
@@ -172,8 +184,8 @@ var istarcoreMetamodel = {
                 //subject: a task, goal, or resource.
 
                 var result = false;
-                result = source.isQuality();
-                result = result && (target.isGoal() || target.isTask() || target.isResource());
+                result = source.isQuality() || source.isQualityAwareness();
+                result = result && (target.isGoal() || target.isTask() || target.isResource() || target.isGoalAwareness() || target.isTaskAwareness() || target.isQualityAwareness() || target.isResourceAwareness());
                 // result = result && (source != target);
                 result = result && (source.attributes.parent === target.attributes.parent);
                 // alert('here');

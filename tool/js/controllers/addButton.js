@@ -106,6 +106,18 @@ uiC.createAddButtons = function() {
             }
         })
     }).render();
+	
+	new uiC.AddButtonDropdownItemView({
+        attributes: {parent: '#addContributionDropdown'},
+        model: new uiC.AddButtonModel({
+            label: 'Hurt (-)',
+            action: ui.STATE_ADD_LINK,
+            name: 'hurt',
+            tooltip: 'Add Hurt (-) Contribution link',
+            statusText: 'Hurt (-) Contribution link: click first on an element and then on the Quality it contributes to.'
+        })
+    }).render();
+	
     new uiC.AddButtonView({
         model: new uiC.AddButtonModel({
             label: 'Task',
@@ -122,7 +134,7 @@ uiC.createAddButtons = function() {
             statusText: 'Click on an actor/role/agent to add a Resource'
         })
     }).render();
-    new uiC.AddButtonView({
+	    new uiC.AddButtonView({
         model: new uiC.AddButtonModel({
             label: 'Quality',
             action: ui.STATE_ADD_NODE,
@@ -174,6 +186,50 @@ uiC.createAddButtons = function() {
             name: 'AwarenessLink',
             tooltip: 'Add Awareness link',
             statusText: 'Awareness link: click first on one element and then on the element that receives the awareness (Goal, Task or Resource).'
+        })
+    }).render();
+	new uiC.AddButtonView({
+        model: new uiC.AddButtonModel({
+            label: 'Goal Awareness',
+            action: ui.STATE_ADD_NODE,
+            name: 'GoalAwareness',
+            tooltip: 'Add Goal',
+            statusText: 'Click on an actor/role/agent to add a Goal',
+            precondition: function () {
+                var valid = true;
+                if (istar.isEmpty()) {
+                    alert('Sorry, you can only add goals on an actor/role/agent.');
+                    valid = false;
+                }
+                return valid;
+            }
+        })
+    }).render();
+	new uiC.AddButtonView({
+        model: new uiC.AddButtonModel({
+            label: 'Task Awareness',
+            action: ui.STATE_ADD_NODE,
+            tooltip: 'Add Task',
+			name: 'TaskAwareness',
+            statusText: 'Click on an actor/role/agent to add a Task'
+        })
+    }).render();
+	new uiC.AddButtonView({
+        model: new uiC.AddButtonModel({
+            label: 'Resource Awareness',
+            action: ui.STATE_ADD_NODE,
+			name: 'ResourceAwareness',
+            tooltip: 'Add Resource',
+            statusText: 'Click on an actor/role/agent to add a Resource'
+        })
+    }).render();
+	    new uiC.AddButtonView({
+        model: new uiC.AddButtonModel({
+            label: 'Quality Awareness',
+            action: ui.STATE_ADD_NODE,
+            name: 'QualityAwareness',
+            tooltip: 'Add Quality',
+            statusText: 'Click on an actor/role/agent to add a Quality'
         })
     }).render();
     new uiC.AddButtonDropdownItemView({

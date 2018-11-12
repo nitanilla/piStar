@@ -11,11 +11,10 @@ uiC.AddButtonView = Backbone.View.extend({
 
     initialize: function () {
         if (!this.model.get('name')) {
-            this.model.set('name', this.model.get('label'));
+             this.model.set('name', this.model.get('label'));
         }
         this.listenTo(this.model, 'change:active', this.highlight);
     },
-
     render: function () {
         this.$el.html(this.template(this.model.toJSON()));
         $('#addToolbarButtons').append(this.$el);
