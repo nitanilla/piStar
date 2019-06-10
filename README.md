@@ -4,7 +4,7 @@
   - it runs entirely on the browser, thus no installation needed
   - high visual fidelity (we want your diagrams to be pretty, even when printed)
   - supports the [iStar 1.0 standard](http://www-di.inf.puc-rio.br/~julio/tese-herbet.pdf) Pag.63
-  - supports modelling awareness NFR, using the [Souza, 14] approach on his [PhD Thesis](http://www-di.inf.puc-rio.br/~julio/tese-herbet.pdf) pag.83
+  - supports Awareness Goal Modeling, using the [Souza, 14] approach in his [PhD Thesis](http://www-di.inf.puc-rio.br/~julio/tese-herbet.pdf) pag.83
 
 Currently, our version of the [original project](http://www.cin.ufpe.br/~jhcp/pistar/) is deployed at http://www.inf.puc-rio.br/~rportugal/piStar/tool/
 
