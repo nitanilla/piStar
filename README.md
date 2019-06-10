@@ -9,7 +9,8 @@
 Currently, our version of the [original project](http://www.cin.ufpe.br/~jhcp/pistar/) is deployed at http://www.inf.puc-rio.br/~rportugal/piStar/tool/
 
 ## Referencing
-If you need to mention this fork of piStar tool, please reference this publication: Portugal, R.L.Q, Cavalcanti, R., and do Prado Leite, J.C.S. A fork from piStar Tool – An Online Tool for Awareness Goal Modeling
+If you need to mention this fork of piStar tool, please reference as: 
+Portugal, R.L.Q, Cavalcanti, R., and do Prado Leite, J.C.S. A fork from piStar Tool – An Online Tool for Awareness Goal Modeling
 
 ## Bugs and Issues
 Have a bug or an issue with this? [Open a new issue](https://github.com/nitanilla/piStar/issues) here on GitHub 
