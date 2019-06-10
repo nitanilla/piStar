@@ -6,7 +6,7 @@
   - supports the [iStar 1.0 standard](http://www-di.inf.puc-rio.br/~julio/tese-herbet.pdf) Pag.63
   - supports modelling awareness NFR, using the [Souza, 14] approach on his [PhD Thesis](http://www-di.inf.puc-rio.br/~julio/tese-herbet.pdf) pag.83
 
-Currently, our version of the [original project] (http://www.cin.ufpe.br/~jhcp/pistar/) is deployed at http://www.inf.puc-rio.br/~rportugal/piStar/tool/
+Currently, our version of the [original project](http://www.cin.ufpe.br/~jhcp/pistar/) is deployed at http://www.inf.puc-rio.br/~rportugal/piStar/tool/
 
 ## Referencing
 If you need to mention this fork of piStar tool, please reference this publication: Portugal, R.L.Q, Cavalcanti, R., and do Prado Leite, J.C.S. A fork from piStar Tool – An Online Tool for Awareness Goal Modeling
