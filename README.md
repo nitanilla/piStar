@@ -1,4 +1,4 @@
-# piStar - online iStar modelling for Awareness
+# piStar - An Online Tool for Awareness Goal Modeling
 
  This is an open-source goal modelling tool. Its key distinguishing characteristics are:
   - it runs entirely on the browser, thus no installation needed
