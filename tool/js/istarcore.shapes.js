@@ -47,7 +47,38 @@ joint.shapes.istar.Actor = joint.dia.Element.extend({
                 stroke: 'black',
                 'stroke-width': 2,
                 'stroke-dasharray': '10,5,4,4'
+            }
+        }
+
+    }, joint.dia.Element.prototype.defaults)
+});
+
+joint.shapes.istar.ActorWoBoundary = joint.dia.Element.extend({
+    markup: '<g><rect class="boundary" /><circle class="element actorKindMain" /><path /><text/></g>',
+    defaults: joint.util.deepSupplement({
+        type: 'istar.Actor',
+        size: {width: 200, height: 120},
+        attrs: {
+            '.element': {
+                transform: 'translate(-20, -20)',//displaces the circle a little bit
+                r: 40,
+                cx: 40,
+                cy: 40,
+                fill: 'rgb(205,254,205)',
+                stroke: 'black',
+                'stroke-width': 2
             },
+            text: {
+                'font-size': 12,
+                text: 'Actor',
+                'text-anchor': 'middle',
+                ref: 'circle',//makes the position of the text relative to the circle
+                'ref-x': 0.5,
+                'ref-y': 0.5,
+                'y-alignment': 'middle',
+                fill: '#000000',
+                'font-family': 'Arial, helvetica, sans-serif'
+            }
         }
 
     }, joint.dia.Element.prototype.defaults)

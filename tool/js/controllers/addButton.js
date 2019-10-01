@@ -29,6 +29,15 @@ uiC.createAddButtons = function() {
             statusText: 'Now click on an empty space in the diagram to add an Actor'
         })
     }).render();
+	new uiC.AddButtonDropdownItemView({
+        attributes: {parent: '#addActorDropdown'},
+        model: new uiC.AddButtonModel({
+            label: 'ActorWoBoundary',
+            action: ui.STATE_ADD_ACTOR,
+            tooltip: 'Add ActorWoBoundary',
+            statusText: 'Now click on an empty space in the diagram to add an Actor'
+        })
+    }).render();
     new uiC.AddButtonDropdownItemView({
         attributes: {parent: '#addActorLinkDropdown'},
         model: new uiC.AddButtonModel({
@@ -106,7 +115,6 @@ uiC.createAddButtons = function() {
             }
         })
     }).render();
-	
 	new uiC.AddButtonDropdownItemView({
         attributes: {parent: '#addContributionDropdown'},
         model: new uiC.AddButtonModel({
@@ -194,6 +202,23 @@ uiC.createAddButtons = function() {
             action: ui.STATE_ADD_NODE,
             name: 'GoalAwareness',
             tooltip: 'Add Goal',
+            statusText: 'Click on an actor/role/agent to add a Goal',
+            precondition: function () {
+                var valid = true;
+                if (istar.isEmpty()) {
+                    alert('Sorry, you can only add goals on an actor/role/agent.');
+                    valid = false;
+                }
+                return valid;
+            }
+        })
+    }).render();
+		new uiC.AddButtonView({
+        model: new uiC.AddButtonModel({
+            label: 'Actor',
+            action: ui.STATE_ADD_NODE,
+            name: 'ActorWoBoundary',
+            tooltip: 'Add ActorWo',
             statusText: 'Click on an actor/role/agent to add a Goal',
             precondition: function () {
                 var valid = true;
