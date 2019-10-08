@@ -141,10 +141,10 @@ istar.setupMetamodel = function (metamodel) {
     istar._createIsActorLinkFunction(metamodel);
 
     joint.dia.Cell.prototype.isKindOfInnerElement = function () {
-        return this.isGoal() || this.isQuality() || this.isTask() || this.isResource() || this.isGoalAwareness() || this.isQualityAwareness() || this.isTaskAwareness() || this.isResourceAwareness() || this.isActorWoBoundary();
+        return this.isGoal() || this.isQuality() || this.isTask() || this.isResource() || this.isGoalAwareness() || this.isQualityAwareness() || this.isTaskAwareness() || this.isResourceAwareness() || this.isActorNode();
     };
     joint.dia.Cell.prototype.isKindOfActor = function () {
-        return this.isActor() || this.isRole() || this.isAgent();
+        return this.isActor() || this.isRole() || this.isAgent() || this.isActorWoBoundary() || this.isRoleWoBoundary() || this.isAgentWoBoundary();
     };
 
 

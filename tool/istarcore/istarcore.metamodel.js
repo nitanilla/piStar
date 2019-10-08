@@ -27,15 +27,24 @@ var istarcoreMetamodel = {
         {
             'name': 'Role',
         },
+        {
+            'name': 'ActorWoBoundary',
+        },
+        {
+            'name': 'RoleWoBoundary',
+        },
+        {
+            'name': 'AgentWoBoundary',
+        }
     ],
     //internal elements
     /** @type {Object[]} */
     nodes: [
         {
-            'name': 'Goal',	
+            'name': 'Goal',
         },
 		{
-            'name': 'GoalAwareness',	
+            'name': 'GoalAwareness',
         },
         {
             'name': 'Quality',
@@ -56,7 +65,7 @@ var istarcoreMetamodel = {
             'name': 'ResourceAwareness',
         },
 		{
-            'name': 'ActorWoBoundary',	
+            'name': 'ActorNode',
         }
     ],
     //links between actor-like elements
@@ -101,8 +110,8 @@ var istarcoreMetamodel = {
                 //A parent can only be AND-refined or OR-refined, not both simultaneously.
 
                 var result = false;
-                result = source.isActorWoBoundary() || source.isTask() || source.isGoal() || source.isQuality() || source.isResource() || source.isGoalAwareness() || source.isTaskAwareness() || source.isQualityAwareness() || source.isResourceAwareness();
-                result = result && (target.isActorWoBoundary() || target.isTask() || target.isGoal() || target.isQuality() || target.isResource() || target.isGoalAwareness() || target.isTaskAwareness() || target.isQualityAwareness() || target.isResourceAwareness());
+                result = source.isActorNode() || source.isTask() || source.isGoal() || source.isQuality() || source.isResource() || source.isGoalAwareness() || source.isTaskAwareness() || source.isQualityAwareness() || source.isResourceAwareness();
+                result = result && (target.isActorNode() || target.isTask() || target.isGoal() || target.isQuality() || target.isResource() || target.isGoalAwareness() || target.isTaskAwareness() || target.isQualityAwareness() || target.isResourceAwareness());
                 result = result && (source != target);
                 result = result && (source.attributes.parent === target.attributes.parent);
                 return result;
@@ -120,8 +129,8 @@ var istarcoreMetamodel = {
                 //A parent can only be AND-refined or OR-refined, not both simultaneously.
 
                 var result = false;
-                result = source.isActorWoBoundary() || source.isTask() || source.isGoal() || source.isQuality() || source.isResource() || source.isGoalAwareness() || source.isTaskAwareness() || source.isQualityAwareness() || source.isResourceAwareness();
-                result = result && (target.isActorWoBoundary() || target.isTask() || target.isGoal() || target.isQuality() || target.isResource() || target.isGoalAwareness() || target.isTaskAwareness() || target.isQualityAwareness() || target.isResourceAwareness());
+                result = source.isActorNode() || source.isTask() || source.isGoal() || source.isQuality() || source.isResource() || source.isGoalAwareness() || source.isTaskAwareness() || source.isQualityAwareness() || source.isResourceAwareness();
+                result = result && (target.isActorNode() || target.isTask() || target.isGoal() || target.isQuality() || target.isResource() || target.isGoalAwareness() || target.isTaskAwareness() || target.isQualityAwareness() || target.isResourceAwareness());
                 result = result && (source != target);
                 result = result && (source.attributes.parent === target.attributes.parent);
                 return result;
@@ -139,8 +148,8 @@ var istarcoreMetamodel = {
                 //A parent can only be AND-refined or OR-refined, not both simultaneously.
 
                 var result = false;
-                result = source.isActorWoBoundary() || source.isTask() || source.isGoal() || source.isQuality() || source.isResource() || source.isGoalAwareness() || source.isTaskAwareness() || source.isQualityAwareness() || source.isResourceAwareness();
-                result = result && (target.isActorWoBoundary() || target.isTask() || target.isGoal() || target.isQuality() || target.isResource() || target.isGoalAwareness() || target.isTaskAwareness() || target.isQualityAwareness() || target.isResourceAwareness());
+                result = source.isActorNode() || source.isTask() || source.isGoal() || source.isQuality() || source.isResource() || source.isGoalAwareness() || source.isTaskAwareness() || source.isQualityAwareness() || source.isResourceAwareness();
+                result = result && (target.isActorNode() || target.isTask() || target.isGoal() || target.isQuality() || target.isResource() || target.isGoalAwareness() || target.isTaskAwareness() || target.isQualityAwareness() || target.isResourceAwareness());
                 result = result && (source != target);
                 result = result && (source.attributes.parent === target.attributes.parent);
                 return result;

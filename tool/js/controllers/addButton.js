@@ -23,6 +23,15 @@ uiC.createAddButtons = function() {
     new uiC.AddButtonDropdownItemView({
         attributes: {parent: '#addActorDropdown'},
         model: new uiC.AddButtonModel({
+            label: 'AgentWoBoundary',
+            action: ui.STATE_ADD_ACTOR,
+            tooltip: 'Add AgentWoBoundary',
+            statusText: 'Now click on an empty space in the diagram to add an AgentWoBoundary'
+        })
+    }).render();
+    new uiC.AddButtonDropdownItemView({
+        attributes: {parent: '#addActorDropdown'},
+        model: new uiC.AddButtonModel({
             label: 'Actor',
             action: ui.STATE_ADD_ACTOR,
             tooltip: 'Add Actor',
@@ -38,6 +47,15 @@ uiC.createAddButtons = function() {
             statusText: 'Now click on an empty space in the diagram to add an Actor'
         })
     }).render();
+    new uiC.AddButtonDropdownItemView({
+          attributes: {parent: '#addActorDropdown'},
+          model: new uiC.AddButtonModel({
+              label: 'RoleWoBoundary',
+              action: ui.STATE_ADD_ACTOR,
+              tooltip: 'Add RoleWoBoundary',
+              statusText: 'Now click on an empty space in the diagram to add an Actor'
+          })
+      }).render();
     new uiC.AddButtonDropdownItemView({
         attributes: {parent: '#addActorLinkDropdown'},
         model: new uiC.AddButtonModel({
@@ -125,7 +143,7 @@ uiC.createAddButtons = function() {
             statusText: 'Hurt (-) Contribution link: click first on an element and then on the Quality it contributes to.'
         })
     }).render();
-	
+
     new uiC.AddButtonView({
         model: new uiC.AddButtonModel({
             label: 'Task',
@@ -217,8 +235,8 @@ uiC.createAddButtons = function() {
         model: new uiC.AddButtonModel({
             label: 'Actor',
             action: ui.STATE_ADD_NODE,
-            name: 'ActorWoBoundary',
-            tooltip: 'Add ActorWo',
+            name: 'ActorNode',
+            tooltip: 'Add ActorNode',
             statusText: 'Click on an actor/role/agent to add a Goal',
             precondition: function () {
                 var valid = true;

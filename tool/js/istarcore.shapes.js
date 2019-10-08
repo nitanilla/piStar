@@ -56,7 +56,7 @@ joint.shapes.istar.Actor = joint.dia.Element.extend({
 joint.shapes.istar.ActorWoBoundary = joint.dia.Element.extend({
     markup: '<g><rect class="boundary" /><circle class="element actorKindMain" /><path /><text/></g>',
     defaults: joint.util.deepSupplement({
-        type: 'istar.Actor',
+        type: 'istar.ActorWoBoundary',
         size: {width: 200, height: 120},
         attrs: {
             '.element': {
@@ -70,7 +70,38 @@ joint.shapes.istar.ActorWoBoundary = joint.dia.Element.extend({
             },
             text: {
                 'font-size': 12,
-                text: 'Actor',
+                text: 'ActorWoBoundary',
+                'text-anchor': 'middle',
+                ref: 'circle',//makes the position of the text relative to the circle
+                'ref-x': 0.5,
+                'ref-y': 0.5,
+                'y-alignment': 'middle',
+                fill: '#000000',
+                'font-family': 'Arial, helvetica, sans-serif'
+            }
+        }
+
+    }, joint.dia.Element.prototype.defaults)
+});
+
+joint.shapes.istar.ActorNode = joint.dia.Element.extend({
+    markup: '<g><rect class="boundary" /><circle class="element actorKindMain" /><path /><text/></g>',
+    defaults: joint.util.deepSupplement({
+        type: 'istar.ActorNode',
+        size: {width: 200, height: 120},
+        attrs: {
+            '.element': {
+                transform: 'translate(-20, -20)',//displaces the circle a little bit
+                r: 40,
+                cx: 40,
+                cy: 40,
+                fill: 'rgb(205,254,205)',
+                stroke: 'black',
+                'stroke-width': 2
+            },
+            text: {
+                'font-size': 12,
+                text: 'ActorNode',
                 'text-anchor': 'middle',
                 ref: 'circle',//makes the position of the text relative to the circle
                 'ref-x': 0.5,
@@ -129,6 +160,42 @@ joint.shapes.istar.Role = joint.dia.Element.extend({
     }, joint.dia.Element.prototype.defaults)
 });
 
+joint.shapes.istar.RoleWoBoundary = joint.dia.Element.extend({
+    markup: '<g><rect class="boundary" /><circle class="element actorKindMain" /><path class="actorDecorator"/><text/></g>',
+    defaults: joint.util.deepSupplement({
+        type: 'istar.RoleWoBoundary',
+        size: {width: 200, height: 120},
+        attrs: {
+            '.element': {
+                transform: 'translate(-20, -20)',//displaces the circle a little bit
+                r: 40,
+                cx: 40,
+                cy: 40,
+                fill: 'rgb(205,254,205)',
+                stroke: 'black',
+                'stroke-width': 2
+            },
+            text: {
+                'font-size': 12,
+                text: 'RoleWoBoundary',
+                'text-anchor': 'middle',
+                ref: 'circle',//makes the position of the text relative to the circle
+                'ref-x': 0.5,
+                'ref-y': 0.5,
+                'y-alignment': 'middle',
+                fill: '#000000',
+                'font-family': 'Arial, helvetica, sans-serif'
+            },
+            path: {
+                d: 'm -11 45 q 30 15 62 0',
+                stroke: 'black',
+                'stroke-width': 1.5,
+                fill: 'none'
+            }
+        }
+    }, joint.dia.Element.prototype.defaults)
+});
+
 joint.shapes.istar.Agent = joint.dia.Element.extend({
     markup: '<g><rect class="boundary"/><circle class="element actorKindMain"/><path class="actorDecorator"/><text/></g>',
     defaults: joint.util.deepSupplement({
@@ -163,6 +230,42 @@ joint.shapes.istar.Agent = joint.dia.Element.extend({
                 stroke: 'black',
                 'stroke-width': 2,
                 'stroke-dasharray': '10,5,4,4'//'10,5'
+            },
+            path: {
+                d: 'm -10 -5 60 0',
+                stroke: 'black',
+                'stroke-width': 1.5,
+                fill: 'none'
+            }
+        }
+    }, joint.dia.Element.prototype.defaults)
+});
+
+joint.shapes.istar.AgentWoBoundary = joint.dia.Element.extend({
+    markup: '<g><rect class="boundary"/><circle class="element actorKindMain"/><path class="actorDecorator"/><text/></g>',
+    defaults: joint.util.deepSupplement({
+        type: 'istar.AgentWoBoundary',
+        size: {width: 200, height: 120},
+        attrs: {
+            '.element': {
+                transform: 'translate(-20, -20)',//displaces the circle a little bit
+                r: 40,
+                cx: 40,
+                cy: 40,
+                fill: 'rgb(205,254,205)',
+                stroke: 'black',
+                'stroke-width': 2
+            },
+            text: {
+                'font-size': 12,
+                text: 'AgentWoBoundary',
+                'text-anchor': 'middle',
+                ref: 'circle',//makes the position of the text relative to the circle
+                'ref-x': 0.5,
+                'ref-y': 0.5,
+                'y-alignment': 'middle',
+                fill: '#000000',
+                'font-family': 'Arial, helvetica, sans-serif'
             },
             path: {
                 d: 'm -10 -5 60 0',
@@ -361,8 +464,8 @@ joint.shapes.istar.ParticipatesInLink = joint.dia.Link.extend({
             '.marker-target': {
                 d: 'M 10 0 L 5 5 L 10 5 M 5 5 L 10 10',
                 fill: 'none',
-                'stroke-width': 1.8		
-				
+                'stroke-width': 1.8
+
             }
         },
         'labelRectOffset': -44,  // in order to correctly position the box behind the label
