@@ -295,6 +295,26 @@ uiC.createAddButtons = function() {
             statusText: 'Help (+) Contribution link: click first on an element and then on the Quality it contributes to.'
         })
     }).render();
+	new uiC.AddButtonDropdownItemView({
+        attributes: {parent: '#addContributionDropdown'},
+        model: new uiC.AddButtonModel({
+            label: 'Some plus (+)',
+            action: ui.STATE_ADD_LINK,
+            name: 'somePlus',
+            tooltip: 'Add some (+) Contribution link',
+            statusText: 'Some (+) Contribution link: click first on an element and then on the Quality it contributes to.'
+        })
+    }).render();
+		new uiC.AddButtonDropdownItemView({
+        attributes: {parent: '#addContributionDropdown'},
+        model: new uiC.AddButtonModel({
+            label: 'Some minus (-)',
+            action: ui.STATE_ADD_LINK,
+            name: 'someMinus',
+            tooltip: 'Add some (-) Contribution link',
+            statusText: 'Some (-) Contribution link: click first on an element and then on the Quality it contributes to.'
+        })
+    }).render();
     new uiC.AddButtonDropdownItemView({
         attributes: {parent: '#addContributionDropdown'},
         model: new uiC.AddButtonModel({
